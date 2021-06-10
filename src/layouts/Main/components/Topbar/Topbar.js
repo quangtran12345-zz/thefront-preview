@@ -39,6 +39,9 @@ const useStyles = makeStyles(theme => ({
     flex: '0 0 auto',
     whiteSpace: 'nowrap',
     textDecoration: 'none',
+    '&:hover': {
+      color: 'rgb(17, 82, 147)'
+    }
   },
   listItemButton: {
     whiteSpace: 'nowrap',
@@ -86,7 +89,7 @@ const Topbar = props => {
           <ListItem className={classes.listItem}>
             <Typography
               variant="body1"
-              color="textSecondary"
+              color="textPrimary"
               className={classes.listItemText}
               component="a"
               href="/home"
@@ -97,7 +100,7 @@ const Topbar = props => {
           <ListItem className={classes.listItem}>
             <Typography
               variant="body1"
-              color="textSecondary"
+              color="textPrimary"
               className={classes.listItemText}
               component="a"
               href="/signup-simple"
@@ -108,7 +111,7 @@ const Topbar = props => {
           <ListItem className={classes.listItem}>
             <Typography
               variant="body1"
-              color="textSecondary"
+              color="textPrimary"
               className={classes.listItemText}
               component="a"
               href="/not-found"

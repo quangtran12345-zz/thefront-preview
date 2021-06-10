@@ -10,7 +10,7 @@ const palette = {
     },
     "type": "light",
     "primary": {
-      "main": "#1976d2",
+      "main": "#3f51b5",
       "light": "rgb(71, 145, 219)",
       "dark": "rgb(17, 82, 147)",
       "contrastText": "#fff"
@@ -64,8 +64,8 @@ const palette = {
     "contrastThreshold": 3,
     "tonalOffset": 0.2,
     "text": {
-      "primary": "rgba(0, 0, 0, 0.87)",
-      "secondary": "rgba(0, 0, 0, 0.54)",
+      "primary": "#2d3748",
+      "secondary": "#718096",
       "disabled": "rgba(0, 0, 0, 0.38)",
       "hint": "rgba(0, 0, 0, 0.38)"
     },

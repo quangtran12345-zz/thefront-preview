@@ -50,7 +50,7 @@ const typography = {
   },
   body1: {
     color: palette.text.primary,
-    fontSize: '14px',
+    fontSize: '1rem',
     lineHeight: 1.3,
   },
   body2: {

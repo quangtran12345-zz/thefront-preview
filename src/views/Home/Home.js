@@ -4,6 +4,7 @@ import { colors, Divider } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
 import {
   Customization,
+  Description,
   Hero,
   Hub,
   Partners,
@@ -38,10 +39,18 @@ const Home = () => {
 
   return (
     <div className={classes.root}>
-      <div className={classes.shape}>
+      <div>
         <Section className={classes.pagePaddingTop}>
           <Hero />
         </Section>
+
+      </div>
+      <div>
+        <Section className={classes.pagePaddingTop}>
+          <Description />
+        </Section>
+      </div>
+      <div className={classes.shape}>
         <Section className={classes.sectionNoPaddingTop}>
           <Hub />
         </Section>

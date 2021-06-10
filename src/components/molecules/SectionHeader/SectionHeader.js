@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 0,
   },
   title: {
-    fontWeight: 'bold',
+    fontWeight: '900',
   },
   cta: {
     marginLeft: theme.spacing(1),
