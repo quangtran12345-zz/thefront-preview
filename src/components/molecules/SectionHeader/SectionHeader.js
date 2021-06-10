@@ -6,9 +6,9 @@ import { Grid, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    marginBottom: theme.spacing(3),
+    marginBottom: theme.spacing(0),
     [theme.breakpoints.up('md')]: {
-      marginBottom: theme.spacing(4),
+      marginBottom: theme.spacing(0),
     },
   },
   disableGutter: {
@@ -58,7 +58,7 @@ const SectionHeader = props => {
   } else if (align === 'right') {
     justifyGrid = 'flex-end';
   }
-
+  
   return (
     <Grid
       container

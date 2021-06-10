@@ -19,13 +19,13 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
   pagePaddingTop: {
-    paddingTop: theme.spacing(3),
+    paddingTop: theme.spacing(5),
     [theme.breakpoints.up('md')]: {
-      paddingTop: theme.spacing(5),
+      paddingTop: theme.spacing(10.5),
     },
   },
   sectionNoPaddingTop: {
-    paddingTop: 0,
+    paddingTop: 7,
   },
   shape: {
     background: theme.palette.alternate.main,
@@ -43,7 +43,7 @@ const Home = () => {
         <Section className={classes.pagePaddingTop}>
           <Hero />
         </Section>
-
+        <Divider />
       </div>
       <div>
         <Section className={classes.pagePaddingTop}>

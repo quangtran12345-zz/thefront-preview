@@ -2,12 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { useMediaQuery, Grid, Button, Typography } from '@material-ui/core';
+import { useMediaQuery, Grid, Box, Button, Typography } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
+import { TypedText } from 'components/molecules/';
 
 const useStyles = makeStyles(theme => ({
   root: {},
+  title: {
+    fontWeight: 900
+  },
   image: {
     boxShadow:
       '25px 60px 125px -25px rgba(80,102,144,.1), 16px 40px 75px -40px rgba(0,0,0,.2)',
@@ -21,7 +25,6 @@ const useStyles = makeStyles(theme => ({
 const Hero = props => {
   const { className, ...rest } = props;
   const classes = useStyles();
-
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -32,7 +35,7 @@ const Hero = props => {
       <Grid
         container
         justify="space-between"
-        spacing={4}
+        spacing={5}
         direction={isMd ? 'row' : 'column-reverse'}
       >
         <Grid
@@ -45,15 +48,27 @@ const Hero = props => {
         >
           <SectionHeader
             title={
-              <span>
-                Beautiful data representation
-                <br />
-                <Typography component="span" variant="inherit" color="primary">
-                  built with theFront.
+              <Box>
+                <Typography
+                  variant="h2"
+                  className={
+                    'section-header__title',
+                    classes.title
+                  }
+                  color="textPrimary"
+                >
+                  A modern design system for your new
                 </Typography>
-              </span>
+                <TypedText variant="h2"
+                  color="secondary"
+                  typedProps={{
+                    strings: ['e-commerce', 'expo', 'startup', 'job listing', 'online course', 'coworking space', 'and many more...'],
+                    typeSpeed: 20,
+                    loop: true
+                  }} />
+              </Box>
             }
-            subtitle="World developers use our theFront theme to build their internal tools and client admin applications. Save yourself time and money."
+            subtitle="TheFront will make your product look modern and professional while saving you precious time."
             ctaGroup={[
               <Button variant="contained" color="primary" size="large">
                 Start now

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { useMediaQuery, Grid, Button, Typography } from '@material-ui/core';
+import { useMediaQuery, Grid, Box, Button, Typography } from '@material-ui/core';
 import { Icon } from 'components/atoms';
 import { CardCategory, Section } from 'components/organisms';
 import { SectionHeader } from 'components/molecules';
@@ -38,18 +38,36 @@ const Description = props => {
       <SectionHeader
         titleVariant="h2"
         title={<span>Build accessible React<br /> apps <Typography color="primary" variant="inherit" component="span">with speed</Typography></span>}
-        subtitle={<span>Build a beautiful, modern website with flexible, fully customizable, atomic <br/>Material UI components.</span>}
+        subtitle={<span>Build a beautiful, modern website with flexible, fully customizable, atomic <br />Material UI components.</span>}
         subtitleVariant="h6"
         align="center"
-        ctaGroup={[
-          <CardCategory title="Built for developers" icon={ <Icon fontIconClass="fas fa-users" fontIconColor="pink" />} subtitle="TheFront is built to make your life easier. Variables, build tooling, documentation, and reusable components." align="left">
-          </CardCategory>,
-            <CardCategory title="Built for developers" icon={ <Icon fontIconClass="fas fa-users" fontIconColor="pink" />} subtitle="TheFront is built to make your life easier. Variables, build tooling, documentation, and reusable components." align="left">
-          </CardCategory>,
-            <CardCategory title="Built for developers" icon={ <Icon fontIconClass="fas fa-users" fontIconColor="pink" />} subtitle="TheFront is built to make your life easier. Variables, build tooling, documentation, and reusable components." align="left">
-          </CardCategory>
-        ]}
       />
+      <Box display="flex" marginTop={2}>
+        <Grid container className={classes.root}>
+          <Grid item sm={4}>
+            <CardCategory
+              title="Built for developers"
+              icon={<Icon fontIconClass="fas fa-layer-group" fontIconColor="rgb(63, 81, 181)" size="medium" />}
+              subtitle="TheFront is built to make your life easier. Variables, build tooling, documentation, and reusable components."
+              align="left">
+            </CardCategory>
+          </Grid>
+          <Grid item sm={4}>
+            <CardCategory title="Designed to be modern"
+              icon={<Icon fontIconClass="fab fa-sketch" fontIconColor="rgb(63, 81, 181)" size="medium" />}
+              subtitle="Designed with the latest design trends in mind. TheFront feels modern, minimal, and beautiful."
+              align="left">
+            </CardCategory>
+          </Grid>
+          <Grid item sm={4}>
+            <CardCategory title="Documentation for everything"
+              icon={<Icon fontIconClass="fas fa-code" fontIconColor="rgb(63, 81, 181)" size="medium" />}
+              subtitle="We've written extensive documentation for components and tools, so you never have to reverse engineer anything."
+              align="left">
+            </CardCategory>
+          </Grid>
+        </Grid>
+      </Box>
     </div>
   );
 };
