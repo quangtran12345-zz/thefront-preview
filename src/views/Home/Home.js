@@ -6,6 +6,7 @@ import {
   Customization,
   Description,
   Hero,
+  HeroAnimation,
   Hub,
   Partners,
   Pricings,
@@ -32,6 +33,9 @@ const useStyles = makeStyles(theme => ({
     borderBottomRightRadius: '50%',
     borderBottom: `1px solid ${colors.grey[200]}`,
   },
+  overflowHidden: {
+    overflow: 'hidden'
+  }
 }));
 
 const Home = () => {
@@ -39,9 +43,9 @@ const Home = () => {
 
   return (
     <div className={classes.root}>
-      <div>
-        <Section className={classes.pagePaddingTop}>
-          <Hero />
+      <div className={classes.overflowHidden}>
+        <Section fullWidth disablePadding>
+          <HeroAnimation />
         </Section>
         <Divider />
       </div>

@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(1),
     '&:first-child': {
       marginLeft: theme.spacing(0),
-    },
+    }
   },
 }));
 

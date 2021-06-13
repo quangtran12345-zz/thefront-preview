@@ -2,20 +2,25 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Icon, Typography } from '@material-ui/core';
+import { Box, Card, CardContent, Grid, Icon, Typography } from '@material-ui/core';
 import { CardBase } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    border: 'none',
+    boxShadow: "none"
+  },
   title: {
-      fontWeight: '700',
+    fontWeight: '700',
   },
   subTitle: {
 
   },
   boxIcon: {
     backgroundColor: theme.palette.alternate.dark,
-    width: '70px',
-    height: '70px',
+    display: 'flex',
+    width: 70,
+    height: 70,
     borderRadius: theme.spacing(2)
   }
 }));
@@ -29,30 +34,46 @@ const useStyles = makeStyles(theme => ({
 const CardCategory = props => {
   const {
     title,
+    titleVariant,
+    titleColor,
     icon,
+    iconProps,
     align,
     className,
-    subtitle
+    subtitle,
+    subtitleColor,
+    subtitleVariant,
+    subtitleProps
   } = props;
   const classes = useStyles();
   return (
-    <Box noShadow align={align}>
-      <Box display="flex" justifyContent="center" alignItems="center" margin={2} className={classes.boxIcon}>
-        {icon}
-      </Box>
-      <Box margin={2}>
-        <Typography className={classes.title} variant="h6">{title}</Typography>
-      </Box>
-      <Box margin={2}>
-        <Typography
-          variant="subtitle1"
-          color="textSecondary"
-          className="card-pricing-standard__subtitle"
-        >
-          {subtitle}
-        </Typography>
-      </Box>
-    </Box>
+    <Card className={classes.root} align={align}>
+      <CardContent>
+        <Grid container direction="column"
+          justify="space-between"
+          alignItems="flex-start"
+          spacing={2}>
+          <Grid item>
+            <Box className={classes.boxIcon} {...iconProps} >
+              {icon}
+            </Box>
+          </Grid>
+          <Grid item>
+          <Typography className={classes.title} variant={titleVariant} color={titleColor || "textPrimary"}>{title}</Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant={subtitleVariant}
+              color={subtitleColor || "primary"}
+              className="card-category__subtitle"
+              {...subtitleProps}
+            >
+              {subtitle}
+            </Typography>
+          </Grid>
+        </Grid>
+      </CardContent>
+    </Card>
   );
 };
 
